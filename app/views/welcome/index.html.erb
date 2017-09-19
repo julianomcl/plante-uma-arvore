@@ -1,0 +1,99 @@
+<style>
+   #map {
+     height: 500px;
+     width: 100%;
+     background-color: #247b24;
+   }
+   body {
+      color: #247b24;
+      background: #dcfdeb;
+      font-family: Roboto,sans-serif;
+   }
+</style>
+
+<h1>Bem-vindo ao Plante Uma Árvore</h1>
+
+<div id="map"></div>
+<script>
+  function initMap() {
+    var uluru = {lat: -23.66216, lng: -46.60549};
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 11,
+      center: uluru,
+      mapTypeId: 'hybrid'
+    });
+    /*var marker = new google.maps.Marker({
+      position: uluru,
+      map: map
+    });*/
+    
+    var icons = {
+      tree: {
+        icon: 'https://mt.googleapis.com/vt/icon/name=icons/onion/SHARED-mymaps-container_4x.png,icons/onion/1720-tree_4x.png&highlight=0F9D58&scale=2.0'
+      }
+    };
+
+    var features = [
+      {
+        position: new google.maps.LatLng(-23.66216, -46.70549),
+        type: 'tree'
+      },
+      {
+        position: new google.maps.LatLng(-23.67216, -46.60549),
+        type: 'tree'
+      },
+      {
+        position: new google.maps.LatLng(-23.68216, -46.75549),
+        type: 'tree'
+      },
+      {
+        position: new google.maps.LatLng(-23.60216, -46.62549),
+        type: 'tree'
+      },
+      {
+        position: new google.maps.LatLng(-23.71216, -46.66549),
+        type: 'tree'
+      },
+      {
+        position: new google.maps.LatLng(-23.72216, -46.60549),
+        type: 'tree'
+      },
+      {
+        position: new google.maps.LatLng(-23.71216, -46.61549),
+        type: 'tree'
+      },
+      {
+        position: new google.maps.LatLng(-23.54216, -46.74549),
+        type: 'tree'
+      },
+      {
+        position: new google.maps.LatLng(-23.76216, -46.59549),
+        type: 'tree'
+      },
+      {
+        position: new google.maps.LatLng(-23.56016, -46.72549),
+        type: 'tree'
+      },
+      {
+        position: new google.maps.LatLng(-23.58216, -46.65549),
+        type: 'tree'
+      },
+      {
+        position: new google.maps.LatLng(-23.59016, -46.50549),
+        type: 'tree'
+      }
+    ];
+
+    // Create markers.
+    features.forEach(function(feature) {
+      var marker = new google.maps.Marker({
+        position: feature.position,
+        icon: icons[feature.type].icon,
+        map: map
+      });
+    });
+  }
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2dlVhp_ogPfsguZdP8TyuGJ5zqWI_I8U&callback=initMap">
+</script>
