@@ -1,0 +1,46 @@
+<style>
+   #map {
+     height: 500px;
+     width: 100%;
+     background-color: #247b24;
+   }
+   body {
+      color: #247b24;
+      background: #dcfdeb;
+      font-family: Roboto,sans-serif;
+   }
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<header class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+
+        <nav>
+            <ul class="nav navbar-nav navbar-right">
+                <li><%= link_to "Home", root_path %></li>
+                <li><%= link_to "Hashtag", hashtag_path %></li>
+                <li><%= link_to "Doe", doe_path %></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<br/><br/><br/><br/>
+<main>
+<h1>Faça uma doação</h1>
+
+<h2>Quanto mais você ajudar, mais árvores iremos plantar!</h2>
+
+<!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
+<form action="https://pagseguro.uol.com.br/checkout/v2/donation.html" method="post">
+<!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
+<input type="hidden" name="currency" value="BRL" />
+<input type="hidden" name="receiverEmail" value="ricardosilva@sistemaids.com.br" />
+<input type="hidden" name="iot" value="button" />
+<input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/doacoes/205x30-doar.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+</form>
+<!-- FINAL FORMULARIO BOTAO PAGSEGURO -->
+</main>
+<br><br>

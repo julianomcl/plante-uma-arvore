@@ -54,4 +54,8 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
   root 'welcome#index'
+  get 'doe' => 'welcome#doe', as: :doe
+  get 'hashtag' => 'welcome#hashtag', as: :hashtag
+  
+  
 end
