@@ -1,13 +1,13 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 <style>
-   #map {
-     height: 600px;
-     width: 70%;
-     background-color: #247b24;
-     float:right;
-   }
+   
    .navbar-inverse {
      background-color: #228B22 !important;
-}
+    }
    
    body {
       color: #247b24;
@@ -49,10 +49,6 @@
    	color: #ffffff !important;
    }
 </style>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
 <header id="navbar2" class="navbar navbar-fixed-top navbar-inverse">
     <div id="navbarMinha" class="container">
@@ -66,21 +62,24 @@
     </div>
 </header>
 <br/><br/>
-<main><center>
-<br/><br/><br/><br/><br/><br/><br/><br/>
-<h1 color="#ffffff">Faça uma doação</h1>
+<main id="doe-page">
+    <div id="doe">
+        <center>
 
-<h2 color="#ffffff">Quanto mais você ajudar, mais árvores iremos plantar!</h2>
-
-<!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
-<form action="https://pagseguro.uol.com.br/checkout/v2/donation.html" method="post">
-<!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
-<input type="hidden" name="currency" value="BRL" />
-<input type="hidden" name="receiverEmail" value="ricardosilva@sistemaids.com.br" />
-<input type="hidden" name="iot" value="button" />
-<input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/doacoes/205x30-doar.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
-</form>
-<!-- FINAL FORMULARIO BOTAO PAGSEGURO -->
-</center>
+            <h1 color="#ffffff">Faça uma doação</h1>
+            
+            <h2 color="#ffffff">Quanto mais você ajudar, mais árvores iremos plantar!</h2>
+            
+            <!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
+            <form action="https://pagseguro.uol.com.br/checkout/v2/donation.html" method="post">
+            <!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
+            <input type="hidden" name="currency" value="BRL" />
+            <input type="hidden" name="receiverEmail" value="ricardosilva@sistemaids.com.br" />
+            <input type="hidden" name="iot" value="button" />
+            <input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/doacoes/205x30-doar.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+            </form>
+            <!-- FINAL FORMULARIO BOTAO PAGSEGURO -->
+        </center>
+    </div>
 </main>
 <br><br>
