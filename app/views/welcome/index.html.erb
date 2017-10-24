@@ -1,26 +1,4 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-
-<header id="navbar2" class="navbar navbar-fixed-top navbar-inverse">
-    <div id="navbarMinha" class="container">
-        <nav>
-        	<p><br>Plante Uma Árvore</p>
-        	<ul class="nav navbar-nav navbar-left hide" id="location">
-                <%= content_tag(:li, fa_icon("map-marker 2x")) %>
-                <li id="user_address"></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><%= link_to "Home", root_path %></li>
-                <li><%= link_to "Doe", doe_path %></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-<br/><br/>
-
+<% provide(:title, 'Home') %>
 <div id="map"></div>
 <a class="twitter-timeline" height="600px" background-color="#228B22" float="left" href="https://twitter.com/hashtag/PlanteUmaArvore" data-widget-id="912781471735218177" width="30%">PlanteUmaArvore Tweets</a>
 

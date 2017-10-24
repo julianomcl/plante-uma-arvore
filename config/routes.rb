@@ -56,6 +56,19 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get 'doe' => 'welcome#doe', as: :doe
   get 'hashtag' => 'welcome#hashtag', as: :hashtag
-  
+
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
+
+  get  '/cadastro', to: 'users#new'
+  post '/cadastro',  to: 'users#create'
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
+
+  resources :users
+  resources :account_activations, only: [:edit]
+  resources :password_resets,     only: [:new, :create, :edit, :update]
   
 end

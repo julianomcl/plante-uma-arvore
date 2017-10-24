@@ -1,0 +1,5 @@
+Olá <%= @user.name %>,
+
+Bem vindo ao Plante Uma Árvore! Clique no link abaixo para ativar a sua conta ou copie e cole em seu navegador:
+
+<%= edit_account_activation_url(@user.activation_token, email: @user.email) %>

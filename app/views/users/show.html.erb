@@ -1,0 +1,38 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+    <section class="col-md-12 container_user_info">
+        <%= gravatar_for @user %>
+        <div class="user-name">
+            <h1><%= @user.name %></h1>
+            <%= content_tag(:a, fa_icon('pencil-square 2x'), :href => edit_user_path(current_user))%>
+        </div>
+
+    </section>
+</div>
+
+<div class="row">
+    <div class="table">
+        <div class="table-row">
+          <div class="cell-left col-md-6">Endereço: </div>
+          <div class="cell-right col-md-6"><%= @user.address %></div>
+        </div>
+
+        <div class="table-row">
+          <div class="cell-left col-md-6">Celular:</div>
+          <div class="cell-right col-md-6"><%= @user.mobile %></div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 row-social">
+        <%= content_tag(:a, fa_icon('twitter 2x'), :href => "http://www.twitter.com.br/#{@user.twitter}")%>
+        <%= content_tag(:a, fa_icon('facebook 2x'), :href => "http://www.facebook.com.br/#{@user.twitter}")%>
+        <%= content_tag(:a, fa_icon('telegram 2x'), :href => "http://www.t.me/#{@user.twitter}")%>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+    </div>
+</div>
