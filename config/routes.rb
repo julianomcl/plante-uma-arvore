@@ -56,6 +56,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get 'doe' => 'welcome#doe', as: :doe
   get 'hashtag' => 'welcome#hashtag', as: :hashtag
+  get 'porque_plantar' => 'welcome#porque_plantar', as: :porque_plantar
 
   get 'password_resets/new'
 
