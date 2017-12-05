@@ -5,4 +5,7 @@ class WelcomeController < ApplicationController
     
     def doe
     end
+
+    def porque_plantar
+    end
 end
