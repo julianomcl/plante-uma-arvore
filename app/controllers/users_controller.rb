@@ -15,6 +15,16 @@ class UsersController < ApplicationController
       redirect_to root_url and return
     end
   end
+  
+  def trees
+    begin
+      @user = User.find(params[:id])
+      @trees = Tree.find(@user)
+      redirect_to root_url and return if @user.nil?
+    rescue
+      redirect_to root_url and return
+    end
+  end
 
   def new
     @user = User.new
@@ -23,9 +33,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      @user.send_activation_email
-      flash[:info] = 'Por favor, verifique seu e-mail para ativar a conta.'
-      redirect_to root_url
+      #@user.send_activation_email
+      @user.update(:activated => true)
+      flash[:info] = 'Faça login.'
+      redirect_to login_url
     else
       render 'new'
     end

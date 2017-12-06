@@ -57,6 +57,11 @@ Rails.application.routes.draw do
   get 'doe' => 'welcome#doe', as: :doe
   get 'hashtag' => 'welcome#hashtag', as: :hashtag
   get 'porque_plantar' => 'welcome#porque_plantar', as: :porque_plantar
+  get 'arvores' => 'welcome#arvores', as: :arvores
+  get 'plantei-uma-arvore' => 'welcome#plantei', as: :plantei
+  post 'plantei-uma-arvore' => 'welcome#plantei_create', as: :plantei_create
+  get 'local' => 'welcome#local', as: :local
+  post 'local' => 'welcome#local_create', as: :local_create
 
   get 'password_resets/new'
 

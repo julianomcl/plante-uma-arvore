@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-    has_and_belongs_to_many :albums
+    has_many :trees
+    has_many :locals
     attr_accessor :remember_token, :activation_token, :reset_token
     before_save   :downcase_email
     before_create :create_activation_digest

@@ -14,10 +14,16 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+var address = '';
+var latitude = '';
+var longitude = '';
+
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(function(position) {
+    latitude = position.coords.latitude;
+    longitude = position.coords.longitude;
     $.getJSON('https://maps.googleapis.com/maps/api/geocode/json?',
-      { latlng: position.coords.latitude+","+position.coords.longitude},
+      { latlng: latitude+","+longitude},
       function(data) {
           var address_components = data.results[0].address_components;
 
@@ -26,7 +32,7 @@ if (navigator.geolocation) {
           var state = address_components.filter(function(x){ return x.types[0] === "administrative_area_level_1" });
           var country = address_components.filter(function(x){ return x.types[0] === "country" });
 
-          var address = sublocality[0].short_name + ", " + city[0].short_name + ", " + state[0].long_name + " - " + country[0].short_name;
+          address = sublocality[0].short_name + ", " + city[0].short_name + ", " + state[0].long_name + " - " + country[0].short_name;
 
           $("ul#location").removeClass('hide');
           $("#user_address").append(address);
@@ -34,3 +40,15 @@ if (navigator.geolocation) {
       });
   });
 }
+
+$(document).ready(function(){
+  
+  $('#my-location').click(function(){
+    $('#tree_address').val(address);
+    $('#tree_latitude').val(latitude);
+    $('#tree_longitude').val(longitude);
+    $('#local_address').val(address);
+    $('#local_latitude').val(latitude);
+    $('#local_longitude').val(longitude);
+  });
+});

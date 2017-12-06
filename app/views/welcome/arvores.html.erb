@@ -1,0 +1,14 @@
+<% provide(:title, 'Árvores') %>
+<main class="container">
+  <h1>Minhas Árvores</h1>
+  <% @trees.each do |t| -%>
+      <div class="col-lg-4 col-md-6">
+        <h3><%= t.name %></h3>
+        <p>
+        Endereço: <%= t.address %> <br>
+        Latitude: <%= t.latitude %> <br>
+        Longitude: <%= t.longitude %> 
+        </p>
+      </div>
+  <% end -%>
+</main>
